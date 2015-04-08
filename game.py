@@ -8,8 +8,16 @@ our_number = random.randint(1, 100)
 counter = 0
 
 while True:
-    guess = int(raw_input("Your guess? "))
-    counter += 1
+    try: 
+        guess = int(raw_input("Your guess? "))
+        counter += 1
+        if guess not in range(1,101):
+            guess = int(raw_input("Guess out of bounds. Your new guess? "))
+            counter += 1
+    except:
+        guess = int(raw_input("Did you even read the instructions?!?! Let's try that again. Pick a NUMBER between 1 and 100? "))
+        counter += 1
+    
     if guess < our_number:
         print "Too low. Try a little higher."
     elif guess > our_number:
