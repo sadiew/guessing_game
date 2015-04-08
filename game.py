@@ -24,6 +24,9 @@ while True:
         print "Too high. Try a little lower."
     else:
         print "Congrats! You guessed correctly! You found my number in %d tries\n" %counter
-        break 
+        answer = raw_input("Do you want to play again? Y/N ")
+        if answer == 'N':
+            break
+
 
 
