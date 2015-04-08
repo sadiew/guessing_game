@@ -6,6 +6,7 @@ print "I'm thinking of a number between 1 and 100. Try to guess the number."
 
 our_number = random.randint(1, 100)
 counter = 0
+scores = []
 
 while True:
     try: 
@@ -24,9 +25,14 @@ while True:
         print "Too high. Try a little lower."
     else:
         print "Congrats! You guessed correctly! You found my number in %d tries\n" %counter
+        scores.append(counter)
+        counter = 0 
         answer = raw_input("Do you want to play again? Y/N ")
+        our_number = random.randint(1, 100) 
         if answer == 'N':
             break
+
+print "Your best score was: " + str(min(scores))
 
 
 
